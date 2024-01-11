@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>SWOT</title>
+    <div th:replace="common :: theheader"></div>
+    <link rel="stylesheet" type="text/css" th:href="@{assets/css/swot.css}">
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top">
+    <div class="container d-flex">
+        <div class="logo mr-auto">
+            <h1 class="text-light">
+                <a href="index.html">EnterComputer</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html"><img src="" alt="Logo" class="img-fluid"></a>-->
+        </div>
+        <nav class="nav-menu d-none d-lg-block">
+            <ul>
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li class="drop-down"><a href="#services">Solutions</a>
+                    <ul>
+                        <li><a href="#">ToDoList</a></li>
+                        <li><a href="#">Swot Analysis</a></li>
+                        <li><a href="#">TrackingEmployee</a></li>
+                        <li class="drop-down"><a href="#">Services</a>
+                            <ul>
+                                <li><a href="#">Web&Mobile Application</a></li>
+                                <li><a href="#">Marketing</a></li>
+                                <li><a href="#">Bussniess Model</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav><!-- .nav-menu -->
+    </div>
+</header><!-- End Header -->
+
+
+<!-- ======= SWOT ======= -->
+<div class="container">
+    <section class="swot">
+        <div class="header-section">
+            <h3 class="title">SWOT<span>ANALYSIS</span></h3>
+        </div>
+        <form method="post" role="form" th:action="@{/swot}" th:object="${SWOT}">
+            <textarea th:field="*{strength}" placeholder="Strength, What Makes U Unique"></textarea>
+            <textarea th:field="*{weakness}" placeholder="Weakness, What Holds U Back"></textarea>
+            <textarea th:field="*{opportunity}"
+                      placeholder="Opportunity, Situations Or Set Of Circumstances That Makes It Possible To DO Thomthing"></textarea>
+            <textarea th:field="*{threat}" placeholder="Threat, Potential Damage"></textarea>
+
+            <div class="text-center s-btn">
+                <button type="submit">Send To My Email</button>
+            </div>
+        </form>
+    </section>
+</div>
+
+</div>
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="footer-info">
+                        <h3>EnterComputer</h3>
+                        <p>
+                            77 Nasr Street, Egypt <br>
+                            Nasr City, Egypt<br><br>
+                            <strong>Phone:</strong> +02 61 54 34<br>
+                            <strong>Email:</strong> EC@example.com<br>
+                        </p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li>
+                            <i class="bx bx-chevron-right"></i>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <i class="bx bx-chevron-right"></i>
+                            <a href="#">About us</a>
+                        </li>
+                        <li>
+                            <i class="bx bx-chevron-right"></i>
+                            <a href="#">Solutions</a>
+                        </li>
+                        <li>
+                            <i class="bx bx-chevron-right"></i>
+                            <a href="#team">Team</a>
+                        </li>
+                        <li>
+                            <i class="bx bx-chevron-right"></i>
+                            <a href="#contact">ContactUs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Web&Mobile Applicatio</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">Markting</a></li>
+                        <li><i class="bx bx-chevron-right"></i> <a href="#">BussniessModel</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 footer-newsletter">
+                    <div th:replace="common :: Subscribe"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright <strong><span>EnterComputer</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            Designed by <a href="#">Shaimaa</a>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+
+<div th:replace="common :: footscript"></div>
+
+</body>
+</html>

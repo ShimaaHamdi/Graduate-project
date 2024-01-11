@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>EnterComputer</title>
+    <div th:replace="common :: theheader"></div>
+    <link rel="stylesheet" type="text/css"
+          src="assets/css/login.css" th:href="@{assets/css/login.css}">
+</head>
+<body>
+
+<div class="form animated bounceIn">
+    <div class="switch">
+        <i class='bx bxs-pencil'></i>
+    </div>
+    <div class="login">
+        <h2>Login To Your Account</h2>
+        <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <!--<div th:if="${param.logout}">
+            You have been logged out.
+        </div>-->
+        <form th:action="@{/login}" method="post">
+            <div><input type="text" placeholder="User Name" name="username"/></div>
+            <div><input type="password" placeholder="password" name="password"/></div>
+            <div><input type="submit" value="Sign In"/></div>
+        </form>
+        <!--<form>
+            <input type="text" placeholder="Username"/>
+            <input type="password" placeholder="Password"/>
+            <button>Login</button>
+        </form>-->
+    </div>
+    <div class="register">
+        <h2>Create An Account</h2>
+        <form role="form" method="post" th:action="@{/register}"
+              th:object="${RegisterAccount}">
+            <input type="text" placeholder="Username" th:field="*{user_name}"/>
+            <input type="password" placeholder="Password" th:field="*{user_password}"/>
+            <input type="email" placeholder="Email Address" th:field="*{user_email}"/>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <footer></footer>
+</div>
+<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+<div th:replace="common :: foot"></div>
+<script src="../static/assets/js/login.js" th:src="@{assets/js/login.js}"></script>
+<script src="/site/src/main/resources/static/assets/vendor/jquery/jquery.min.js"></script>
+
+<script src="/site/src/main/resources/static/assets/vendor/bootstrap/js/bootstrap.min.js"></script> 
+<script src="/site/src/main/resources/static/assets/js/login.js"></script>
+ <script src="/site/src/main/resources/static/assets/js/swot.js"></script>
+<script src="/site/src/main/resources/static/assets/vendor/aos/aos.js"></script>
+<script src="/site/src/main/resources/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/site/src/main/resources/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="/site/src/main/resources/static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="/site/src/main/resources/static/assets/vendor/venobox/venobox.min.js"></script>
+<script src="/site/src/main/resources/static/assets/js/main.js"></script> 
+</body>
+
+</html>

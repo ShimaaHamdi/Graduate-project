@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<body>
+<div th:fragment="theheader">
+    <!--    use this -->
+    <!--    <div th:replace="common :: theheader"></div> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="" rel="icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link th:href="@{/assets/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/assets/vendor/icofont/icofont.min.css}" rel="stylesheet">
+    <link th:href="@{/assets/vendor/boxicons/css/boxicons.min.css}" rel="stylesheet">
+    <link th:href="@{/assets/vendor/owl.carousel/assets/owl.carousel.min.css}" rel="stylesheet">
+    <link th:href="@{/assets/vendor/venobox/venobox.css}" rel="stylesheet">
+    <link th:href="@{/assets/vendor/aos/aos.css}" rel="stylesheet">
+
+    <!--  CSS File -->
+    <link th:href="@{/assets/css/style.css}" rel="stylesheet">
+    <!--    <link rel="stylesheet" type="text/css" th:href="@{assets/css/login.css}">-->
+    <!-- =======================================================
+    * Project Name:
+    * Project URL:
+    * Author:
+    ======================================================== -->
+</div>
+<div th:fragment="foot">
+    <!--    use this -->
+    <!--    <div th:replace="common :: foot"></div>  -->
+    <!-- Vendor JS Files -->
+    <script th:src="@{/assets/vendor/jquery/jquery.min.js}"></script>
+    <script th:src="@{/assets/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/assets/vendor/jquery.easing/jquery.easing.min.js}"></script>
+    <script th:src="@{/assets/vendor/owl.carousel/owl.carousel.min.js}"></script>
+    <script th:src="@{/assets/vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+    <script th:src="@{/assets/vendor/venobox/venobox.min.js}"></script>
+    <script th:src="@{/assets/vendor/aos/aos.js}"></script>
+
+    <!-- Template Main JS File -->
+    <script th:src="@{/assets/js/main.js}"></script>
+    <!--    <script src="assets/js/login.js"></script>  -->
+</div>
+<div th:fragment="footscript">
+    <!--    use this -->
+    <!--    <div th:replace="common :: footscript"></div>  -->
+    <!-- Vendor JS Files -->
+    <script th:src="@{/assets/vendor/jquery/jquery.min.js}"></script>
+    <script th:src="@{/assets/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/assets/vendor/jquery.easing/jquery.easing.min.js}"></script>
+    <script th:src="@{/assets/vendor/owl.carousel/owl.carousel.min.js}"></script>
+    <script th:src="@{/assets/vendor/isotope-layout/isotope.pkgd.min.js}"></script>
+    <script th:src="@{/assets/vendor/venobox/venobox.min.js}"></script>
+    <script th:src="@{/assets/vendor/aos/aos.js}"></script>
+
+    <!-- Template Main JS File -->
+    <!--    <script th:src="@{/assets/js/main.js}"></script>-->
+    <!--    <script src="assets/js/login.js"></script>  -->
+</div>
+
+<div th:fragment="Subscribe">
+    <!--    use this -->
+    <!--    <div th:replace="common :: Subscribe"></div>  -->
+
+    <h4>Our Newsletter</h4>
+    <p style="color:floralwhite">Let Us inform you with any updates</p>
+    <form th:action="@{/sendEmail}" method="post">
+        <input type="email" name="email"/> <input type="submit" value="Subscribe"/>
+    </form>
+</div>
+<div th:fragment="clint">
+<!--  <div th:replace="common :: clint"></div>  -->
+    <div class="owl-carousel clients-carousel">
+        <img src="assets/img/clients/client-1.png"
+             th:src="@{/assets/img/clients/client-1.png}" alt=""/>
+        <img src="assets/img/clients/client-2.png"
+             th:src="@{/assets/img/clients/client-2.png}" alt="">
+        <img src="assets/img/clients/client-3.png"
+             th:src="@{/assets/img/clients/client-3.png}" alt="">
+        <img src="assets/img/clients/client-4.png"
+             th:src="@{/assets/img/clients/client-4.png}" alt="">
+        <img src="assets/img/clients/client-5.png"
+             th:src="@{/assets/img/clients/client-5.png}" alt="">
+        <img src="assets/img/clients/client-6.png"
+             th:src="@{/assets/img/clients/client-6.png}" alt="">
+        <img src="assets/img/clients/client-7.png"
+             th:src="@{/assets/img/clients/client-7.png}" alt="">
+        <img src="assets/img/clients/client-8.png"
+             th:src="@{/assets/img/clients/client-8.png}" alt="">
+    </div>
+</div>
+<div th:fragment="contact">
+<!--  <div th:replace="common :: contact"></div>  -->
+    <form role="form" class="php-email-form" th:action="@{/contactForm}"
+          th:object="${ContactUs}" method="post">
+        <div class="form-row">
+            <div class="col-md-6 form-group">
+                <input type="text" name="name" th:field="*{userName}"
+                       class="form-control" id="name" placeholder="Your Name"
+                       data-rule="minlen:4" data-msg="Please enter at least 4 chars"/>
+                <div class="validate"></div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input type="email" th:field="*{userEmail}"
+                       class="form-control" name="email" id="email"
+                       placeholder="Your Email" data-rule="email"
+                       data-msg="Please enter a valid email"/>
+                <div class="validate"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" data-msg="Please enter at least 8 chars of subject"
+                   data-rule="minlen:4" id="subject" name="subject"
+                   placeholder="Subject" th:field="*{subject}" type="text"/>
+            <div class="validate"></div>
+        </div>
+        <div class="form-group">
+                <textarea class="form-control"
+                          th:field="*{message}" name="message" rows="5"
+                          data-rule="required" data-msg="Please write something for us" placeholder="Message">
+                </textarea>
+
+        </div>
+        <div class="text-center">
+            <button style="left: 3%;" type="submit">Send Message</button>
+        </div>
+    </form>
+</div>
+<script src="/site/src/main/resources/static/assets/vendor/jquery/jquery.min.js"></script>
+
+<script src="/site/src/main/resources/static/assets/vendor/bootstrap/js/bootstrap.min.js"></script> 
+<script src="/site/src/main/resources/static/assets/js/login.js"></script>
+ <script src="/site/src/main/resources/static/assets/js/swot.js"></script>
+<script src="/site/src/main/resources/static/assets/vendor/aos/aos.js"></script>
+<script src="/site/src/main/resources/static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="/site/src/main/resources/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="/site/src/main/resources/static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="/site/src/main/resources/static/assets/vendor/venobox/venobox.min.js"></script>
+<script src="/site/src/main/resources/static/assets/js/main.js"></script> 
+</body>
+</html>
